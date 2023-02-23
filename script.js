@@ -12,7 +12,9 @@ cells.forEach((cell) => {
 
   cell.addEventListener("click", () => {
       cell.classList.toggle("on");
-    
+        if (click === 2) {
+           js 
+        }
     console.log("click");
   });
 });
