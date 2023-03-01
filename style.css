@@ -1,17 +1,21 @@
+body {
+  background-color: #C2C2B7;
+}
+
 .container {
   margin: auto;
   margin-top: 40px;
-  border: 2px solid #456a5b;
-  width: 950px;
+
+  width: 850px;
   height: 600px;
   border-radius: 10px;
-  background-color: #566152;
+
   font-family: 'Montserrat', sans-serif;
 }
 
 .grid {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 15px;
   margin: auto;
@@ -24,8 +28,8 @@
 .cell {
   width: 150px;
   height: 150px;
-  border: 3px solid black;
+  border: 3px solid #06552E;
   box-shadow: 8px 8px 24px -3px rgba(66, 68, 90, 1);
   border-radius: 10px;
-  background-color: #e6e8e1;
+  background-color: #FFFFFE;
 }
