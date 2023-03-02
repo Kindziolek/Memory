@@ -3,7 +3,7 @@ const cells = document.querySelectorAll(".cell");
 cells.forEach((cell) => {
   cell.addEventListener("mouseenter", () => {
     console.log();
-    cell.style.border = "3px solid #FFFFFE";
+    cell.style.border = "2px solid #FFFFFE";
   });
 
   cell.addEventListener("mouseleave", () => {
