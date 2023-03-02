@@ -1,0 +1,53 @@
+body {
+  background-color: #e7e6e0;
+}
+
+.title {
+  color: #06552e;
+  justify-content: center;
+  align-items: center;
+  font-family: Gloria Hallelujah, cursive;
+  font-size: 45px;
+  display: flex;
+}
+
+.container {
+  width: 850px;
+  height: 800px;
+  border-radius: 10px;
+  margin: 50px auto auto;
+  font-family: Gloria Hallelujah, cursive;
+}
+
+.grid {
+  height: 100%;
+  flex-flow: column wrap;
+  place-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: auto;
+  display: flex;
+}
+
+.cell {
+  width: 150px;
+  height: 150px;
+  background-color: #c2c2b7;
+  border: 2px solid #06552e;
+  border-radius: 10px;
+  box-shadow: 8px 8px 24px -3px #42445a;
+}
+
+.cell_background {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.stats {
+  color: #06552e;
+  flex-direction: row;
+  justify-content: space-around;
+  display: flex;
+}
+
+/*# sourceMappingURL=index.2cdaf7bc.css.map */

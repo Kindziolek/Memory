@@ -1,0 +1,24 @@
+{
+  "name": "memory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kindziolek/Memory.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kindziolek/Memory/issues"
+  },
+  "homepage": "https://github.com/Kindziolek/Memory#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}
