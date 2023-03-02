@@ -13,9 +13,14 @@ cells.forEach((cell) => {
   cell.addEventListener("click", () => {
       cell.classList.toggle("on");
         if (click === 2) {
-           js 
+           
         }
     console.log("click");
   });
 });
+
+// function tableCreate() {
+// for (i = 0; i < 13; i++)
+
+// }
  
