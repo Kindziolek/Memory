@@ -1,3 +1,36 @@
+{/* <li class="cell"><img src="./images/cell-background.png"  */}
+
+
+
+
+let grid = document.querySelector("#grid");
+
+let li = document.createElement("li");
+
+let images = ["PM-1.png", "PM-2.png", "PM-3.png", "PM-4.png", "PM-5.png", "PM-6.png", "PM-7.png", "PM-8.png", "PM-9.png", "PM-10.png", "PM-11.png", "PM-12.png"]
+
+console.log(images)
+
+// function createCell() {
+// for (let i = 0; i > 24; i++) {
+//     grid.appendChild("li");
+//     console.log("ll")
+// }}
+// createCell();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 
