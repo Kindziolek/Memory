@@ -2,6 +2,8 @@ body {
   background-color: #E7E6E0;
 }
 
+
+
 .title {
   color: #06552e;
   font-size: 45px;
@@ -41,6 +43,13 @@ body {
   box-shadow: 8px 8px 24px -3px rgba(66, 68, 90, 1);
   border-radius: 10px;
   background-color: #c2c2b7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell_img {
+  height: 70%;
 }
 
 .cell_background {
