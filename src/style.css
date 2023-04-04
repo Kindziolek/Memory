@@ -16,7 +16,6 @@ body {
 .container {
   margin: auto;
   margin-top: 50px;
-
   width: 850px;
   height: 800px;
   border-radius: 10px;
@@ -62,3 +61,4 @@ body {
   justify-content: space-around;
   color: #06552e;
 }
+

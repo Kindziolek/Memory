@@ -4,20 +4,34 @@
 
 
 let grid = document.querySelector("#grid");
-
+let startBtn = document.querySelector("#startGame")
 let li = document.createElement("li");
 
-let images = ["PM-1.png", "PM-2.png", "PM-3.png", "PM-4.png", "PM-5.png", "PM-6.png", "PM-7.png", "PM-8.png", "PM-9.png", "PM-10.png", "PM-11.png", "PM-12.png"]
+let images = ["PM-1.png", "PM-2.png", "PM-3.png", "PM-4.png", "PM-5.png", "PM-6.png", "PM-7.png", "PM-8.png", "PM-9.png", "PM-10.png", "PM-11.png", "PM-12.png", "PM-1.png", "PM-2.png", "PM-3.png", "PM-4.png", "PM-5.png", "PM-6.png", "PM-7.png", "PM-8.png", "PM-9.png", "PM-10.png", "PM-11.png", "PM-12.png"]
 
-images.forEach((img) => {
-    let li = document.createElement("li");
-    let element = document.createElement("img");
-    element.src='./images/'+img
-    grid.append(li)
-    li.append(element);
-    li.classList="cell";
-    element.classList="cell_img"
+
+function startGame() {
+startBtn.addEventListener("click", () => {
+
+    images.forEach((img) => {
+        let li = document.createElement("li");
+        let element = document.createElement("img");
+        element.src='./images/'+img
+        grid.append(li)
+        li.append(element);
+        li.classList="cell";
+        let randomPos = Math.floor(Math.random()*24)
+        li.style.order = randomPos;
+        element.classList="cell_img"
+    })
+    
 })
+}
+startGame()
+
+
+
+
 
 console.log(images)
 
