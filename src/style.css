@@ -19,7 +19,6 @@ body {
   width: 850px;
   height: 800px;
   border-radius: 10px;
-
   font-family: "Gloria Hallelujah", cursive;
 }
 
@@ -60,5 +59,13 @@ body {
   flex-direction: row;
   justify-content: space-around;
   color: #06552e;
+}
+
+.btn__new_game {
+  background-color: transparent;
+  border: none;
+  color: red;
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 20px;
 }
 
