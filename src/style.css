@@ -34,7 +34,7 @@ body {
   height: 100%;
 }
 
-.cell {
+.cell_front {
   width: 150px;
   height: 150px;
   border: 2px solid #06552e;
@@ -44,16 +44,32 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .cell_img {
   height: 70%;
+
 }
 
-.cell_background {
-  border-radius: 10px;
-  width: 100%;
+.cell_back {
+ width: 150px;
+position: absolute;
+border-radius: 10px;
+transition: transform .6s cubic-bezier(0.4,0.0, 0.2, 1);
+backface-visibility: hidden;
+transform: rotateY(180deg) rotateZ(50deg);
+user-select: none;
 }
+
+.cell.flipped .cell_front {
+  transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.cell.flipped .cell_back {
+  transform: rotateY(0) rotateZ(0);
+}
+
 .stats {
   display: flex;
   flex-direction: row;

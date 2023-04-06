@@ -1,6 +1,9 @@
+
 let grid = document.querySelector("#grid");
 let startBtn = document.querySelector("#startGame");
 let li = document.createElement("li");
+
+
 
 let images = [
   "PM-1.png",
@@ -23,10 +26,10 @@ let images = [
   "PM-6.png",
   "PM-7.png",
   "PM-8.png",
-  "PM-9.png",
-  "PM-10.png",
-  "PM-11.png",
-  "PM-12.png",
+//   "PM-9.png",
+//   "PM-10.png",
+//   "PM-11.png",
+//   "PM-12.png",
 ];
 
 function startGame() {
@@ -39,7 +42,16 @@ function startGame() {
       grid.append(li);
       li.append(element);
       element.classList = "cell_img";
-      li.classList = "cell";
+      li.classList = "cell_front";
+
+      let cellBack = document.createElement("img");
+      cellBack.src = "./images/cell-background.png"
+      grid.append(li);
+      li.append(cellBack);
+      cellBack.classList = "cell_back";
+
+
+
       let randomPos = Math.floor(Math.random() * 24);
       li.style.order = randomPos;
 
@@ -49,14 +61,14 @@ function startGame() {
       li.addEventListener("mouseleave", () => {
         li.style.border = "";
       });
+      
     });
   });
 }
 startGame();
 
-function flipCard() {
 
-}
+
 
 
 
