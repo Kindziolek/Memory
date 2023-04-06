@@ -1,11 +1,4 @@
-
-let grid = document.querySelector("#grid");
-let startBtn = document.querySelector("#startGame");
-let li = document.createElement("li");
-
-
-
-let images = [
+const images = [
   "PM-1.png",
   "PM-2.png",
   "PM-3.png",
@@ -32,10 +25,19 @@ let images = [
 //   "PM-12.png",
 ];
 
+let startBtn = document.querySelector("#startGame");
+let grid = document.querySelector("#grid");
+
+startBtn.addEventListener("click", () => {
+    grid.innerHTML=""
+    startGame()
+})
+
 function startGame() {
-  startBtn.addEventListener("click", () => {
+  
+    
     images.forEach((img) => {
-      images = [];
+     
       let li = document.createElement("li");
       let element = document.createElement("img");
       element.src = "./images/" + img;
@@ -46,7 +48,7 @@ function startGame() {
 
       let cellBack = document.createElement("img");
       cellBack.src = "./images/cell-background.png"
-      grid.append(li);
+
       li.append(cellBack);
       cellBack.classList = "cell_back";
 
@@ -63,8 +65,12 @@ function startGame() {
       });
       
     });
-  });
+  ;
 }
+
+
+
+
 startGame();
 
 
