@@ -27,6 +27,7 @@ const images = [
 
 let startBtn = document.querySelector("#startGame");
 let grid = document.querySelector("#grid");
+let cellFront = document.querySelector(".cell_front")
 
 startBtn.addEventListener("click", () => {
     grid.innerHTML=""
@@ -35,6 +36,8 @@ startBtn.addEventListener("click", () => {
 
 function startGame() {
   
+    let time = 0;
+    let click = 0;
     
     images.forEach((img) => {
      
@@ -44,6 +47,7 @@ function startGame() {
       grid.append(li);
       li.append(element);
       element.classList = "cell_img";
+      element.style.visibility="hidden"
       li.classList = "cell_front";
 
       let cellBack = document.createElement("img");
@@ -64,10 +68,16 @@ function startGame() {
         li.style.border = "";
       });
       
+
+      li.addEventListener("click", (el) => {
+            
+            cellFront.style.visibility="visible"
+      
+      })
+
     });
   ;
 }
-
 
 
 
