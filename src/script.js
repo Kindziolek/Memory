@@ -30,10 +30,6 @@ let grid = document.querySelector("#grid");
 let cellFront = document.querySelector(".cell_front")
 let timer = document.querySelector("#timer")
 
-const state = {
-    timer = 0,
-    click = 0,
-}
 
 
 startBtn.addEventListener("click", () => {
@@ -45,12 +41,7 @@ function startGame() {
   
 
     
-    state.loop = setInterval(() => {
-        state.totalTime++
 
-        selectors.timer.innerText = `time: ${state.totalTime} sec`
-    }, 1000)
-}
 
     images.forEach((img) => {
      
@@ -84,12 +75,17 @@ function startGame() {
 
       li.addEventListener("click", () => {
         
+        const flipCell = () => {
         if (element.style.visibility="hidden") {
             element.style.visibility="visible" 
             cellBack.style.visibility="hidden" 
         } else {
             element.style.visibility="hidden"
         cellBack.style.visibility="visible"  }
+
+        }
+
+        flipCell();
       })
 
       
