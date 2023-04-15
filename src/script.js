@@ -28,6 +28,13 @@ const images = [
 let startBtn = document.querySelector("#startGame");
 let grid = document.querySelector("#grid");
 let cellFront = document.querySelector(".cell_front")
+let timer = document.querySelector("#timer")
+
+const state = {
+    timer = 0,
+    click = 0,
+}
+
 
 startBtn.addEventListener("click", () => {
     grid.innerHTML=""
@@ -36,9 +43,15 @@ startBtn.addEventListener("click", () => {
 
 function startGame() {
   
-    let time = 0;
-    let click = 0;
+
     
+    state.loop = setInterval(() => {
+        state.totalTime++
+
+        selectors.timer.innerText = `time: ${state.totalTime} sec`
+    }, 1000)
+}
+
     images.forEach((img) => {
      
       let li = document.createElement("li");
@@ -69,27 +82,21 @@ function startGame() {
       });
       
 
-      li.addEventListener("click", (el) => {
-            
-            cellFront.style.visibility="visible"
-      
+      li.addEventListener("click", () => {
+        
+        if (element.style.visibility="hidden") {
+            element.style.visibility="visible" 
+            cellBack.style.visibility="hidden" 
+        } else {
+            element.style.visibility="hidden"
+        cellBack.style.visibility="visible"  }
       })
 
+      
     });
   ;
 }
 
-const startGame = () => {
-    state.gameStarted = true
-    selectors.start.classList.add('disabled')
-
-    state.loop = setInterval(() => {
-        state.totalTime++
-
-        selectors.moves.innerText = `${state.totalFlips} moves`
-        selectors.timer.innerText = `time: ${state.totalTime} sec`
-    }, 1000)
-}
 
 
 startGame();
