@@ -60,6 +60,10 @@ body {
   height: 70%;
 }
 
+.matched {
+  height: 70%;
+}
+
 .cell_back {
   width: 150px;
   position: absolute;

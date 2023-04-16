@@ -1,4 +1,4 @@
-const images = [
+const plants = [
   "PM-1.png",
   "PM-2.png",
   "PM-3.png",
@@ -36,7 +36,7 @@ startBtn.addEventListener("click", () => {
 });
 
 function startGame() {
-  images
+  plants
     .map((value) => ({
       value,
       random: Math.random(),
@@ -69,40 +69,36 @@ function startGame() {
       li.addEventListener("click", (el) => {
         let front = el.target.parentNode.querySelector(".cell_img");
         let back = el.target.parentNode.querySelector(".cell_back");
-       
 
         if ((front.style.visibility = "hidden")) {
           front.style.visibility = "visible";
           back.style.visibility = "hidden";
-          front.classList = "cell_img_flipped";
+          front.classList.add("cell_img_flipped");
         }
-        const d = grid.querySelectorAll(".cell_img_flipped");
+        const flipp = grid.querySelectorAll(".cell_img_flipped");
 
-        console.log(d.length);
+        let flippCell = flipp.length;
+
+        console.log(flipp.length);
+        if (flippCell === 2) {
+          if (flipp[0].src === flipp[1].src) {
+            [...flipp].map((v) => (v.parentNode.style.visibility = "hidden"));
+          } else {
+            grid.style.pointerEvents = "none";
+            setTimeout(() => {
+              [...flipp].map((v) => {
+                let front = v.parentNode.querySelector(".cell_img");
+                let back = v.parentNode.querySelector(".cell_back");
+                back.style.visibility = "visible";
+                front.style.visibility = "hidden";
+                front.classList.remove("cell_img_flipped");
+                grid.style.pointerEvents = "all";
+              });
+            }, 2000);
+          }
+        }
       });
     });
 }
 
 startGame();
-
-// const cells = document.querySelectorAll(".cell");
-
-// const game = [];
-
-// const generateGame = () => [];
-
-// cells.forEach((cell) => {
-//   cell.addEventListener("mouseenter", () => {
-//     cell.style.border = "2px solid #FFFFFE";
-//   });
-
-//   cell.addEventListener("mouseleave", () => {
-//     cell.style.border = "";
-//   });
-
-//   cell.addEventListener("click", () => {
-//       cell.classList.toggle("on");
-
-//     console.log("click");
-//   });
-// });
