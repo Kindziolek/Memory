@@ -9,8 +9,8 @@ const plants = [
   "PM-8.png",
   "PM-9.png",
   "PM-10.png",
-  "PM-11.png",
-  "PM-12.png",
+  // "PM-11.png",
+  // "PM-12.png",
   "PM-1.png",
   "PM-2.png",
   "PM-3.png",
@@ -19,19 +19,24 @@ const plants = [
   "PM-6.png",
   "PM-7.png",
   "PM-8.png",
-  //   "PM-9.png",
-  //   "PM-10.png",
-  //   "PM-11.png",
-  //   "PM-12.png",
+  "PM-9.png",
+  "PM-10.png",
+  // "PM-11.png",
+  // "PM-12.png",
 ];
+
+const click = []
 
 let startBtn = document.querySelector("#startGame");
 let grid = document.querySelector("#grid");
 let cellFront = document.querySelector(".cell_front");
 let timer = document.querySelector("#timer");
+let clicks = document.querySelector("#clicks");
 
 startBtn.addEventListener("click", () => {
   grid.innerHTML = "";
+  flippCell = 0;
+  clicks.innerHTML=`Clicks:`
   startGame();
 });
 
@@ -66,9 +71,16 @@ function startGame() {
         li.style.border = "";
       });
 
+
+
+
       li.addEventListener("click", (el) => {
+     
+
         let front = el.target.parentNode.querySelector(".cell_img");
         let back = el.target.parentNode.querySelector(".cell_back");
+
+       
 
         if ((front.style.visibility = "hidden")) {
           front.style.visibility = "visible";
@@ -78,11 +90,19 @@ function startGame() {
         const flipp = grid.querySelectorAll(".cell_img_flipped");
 
         let flippCell = flipp.length;
+        
+        click.push(flippCell)
+        clicksCell = click.length;
+        clicks.innerHTML=`Clicks: ${clicksCell}`
 
-        console.log(flipp.length);
+      
         if (flippCell === 2) {
           if (flipp[0].src === flipp[1].src) {
-            [...flipp].map((v) => (v.parentNode.style.visibility = "hidden"));
+            [...flipp].map((v) => {
+              let front = v.parentNode.querySelector(".cell_img");
+              v.parentNode.style.visibility = "hidden";
+              front.classList.remove("cell_img_flipped");
+            });
           } else {
             grid.style.pointerEvents = "none";
             setTimeout(() => {
@@ -94,7 +114,7 @@ function startGame() {
                 front.classList.remove("cell_img_flipped");
                 grid.style.pointerEvents = "all";
               });
-            }, 2000);
+            }, 1000);
           }
         }
       });
