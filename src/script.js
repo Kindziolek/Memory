@@ -25,7 +25,8 @@ const plants = [
   // "PM-12.png",
 ];
 
-const click = []
+let click = []
+let totalTime = 0;
 
 let startBtn = document.querySelector("#startGame");
 let grid = document.querySelector("#grid");
@@ -35,12 +36,22 @@ let clicks = document.querySelector("#clicks");
 
 startBtn.addEventListener("click", () => {
   grid.innerHTML = "";
-  flippCell = 0;
   clicks.innerHTML=`Clicks:`
+
+
+
   startGame();
 });
 
+totalTime = setInterval(() => {
+    totalTime++
+    timer.innerHTML=`Time: ${totalTime}`
+}, 1000)
+
 function startGame() {
+ totalTime = 0;
+
+ click = []
   plants
     .map((value) => ({
       value,
